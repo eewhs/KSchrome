@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>強震モニタ</title>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/kyoshin.css">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="main">
+            <img id="map_basemap" src="../images/base_map_b.png" width="352" height="400">
+            <canvas id="map_kyoshin" width="352" height="400"></canvas>
+            <span id="eewinfo">緊急地震速報（受信待機中）</span>
+            <img id="pswave" width="352" height="400">
+            <button id="opensetting">設定</button>
+        </div>
+        <div id="menu">
+            <input type="radio" id="r1" name="menubutton" checked>
+            <label for="r1" id="l1">モニタ設定</label>
+            <input type="radio" id="r2" name="menubutton">
+            <label for="r2" id="l2">その他設定</label>
+            <input type="radio" id="r3" name="menubutton">
+            <label for="r3" id="l3">地震情報</label>
+            <input type="radio" id="r4" name="menubutton">
+            <label for="r4" id="l4">揺れグラフ</label>
+            <input type="radio" id="r6" name="menubutton">
+            <label for="r6" id="l6">謝辞</label>
+            <div id="m1">
+                <span>メイン画像<br></span>
+                <select id="btype1">
+                    <option value="acmap" selected>最大加速度</option>
+                    <option value="jma">震度</option>
+                </select>
+                <input type="radio" id="bsurface" name="btype2" checked>
+                <label for="bsurface">地表</label>
+                <input type="radio" id="bborehole" name="btype2">
+                <label for="bborehole">地中</label>
+                <br>
+                <span>その他<br></span>
+                <input type="checkbox" id="psdisp" checked>
+                <label for="psdisp">予測円を表示する</label>
+                <br>
+                <input type="range" id="timebar" min="-180" max="0" step="0.1" value="0">
+                <span id="late"></span>
+                <br>
+                <input type="range" id="intval" min="1" max="5" value="1">
+                <span id="inttx"></span>
+            </div>
+            <div id="m2">
+                <input type="checkbox" id="autochange" checked>
+                <label for="autochange">地震情報が更新されたときは、地震情報タブに切り替える（30秒後に自動で波形画面に切り替え）</label>
+                <br>
+                <input type="checkbox" id="readinfo" checked>
+                <label for="readinfo">地震情報が更新されたときに効果音＆音声で読み上げる</label>
+                <br>近くの観測点<br>
+                <select id="pref"></select>
+                <select id="obpoint"></select>
+                <br>
+            </div>
+            <div id="m3">
+                <span id="qi"></span>
+                <span id="gettime"></span>
+            </div>
+            <div id="m4">
+                <canvas id="wave" width="352" height="150"></canvas>
+                <span id="colors"></span>
+            </div>
+            <div id="m6">
+                <span>強震モニタ（防災科学技術研究所）<br>　</span>
+                <a href="https://www.kyoshin.bosai.go.jp/kyoshin/"
+                    target="_blank">https://www.kyoshin.bosai.go.jp/kyoshin/</a>
+                <span><br>地震情報（yahoo地震情報）<br>　</span>
+                <a href="https://typhoon.yahoo.co.jp/weather/jp/earthquake/"
+                    target="_blank">https://typhoon.yahoo.co.jp/weather/jp/earthquake/</a>
+                <span><br>緊急地震速報API（Wolfx API）<br>　</span>
+                <a href="https://wolfx.jp/" target="_blank">https://wolfx.jp/</a>
+                <span><br>効果音（otologic・魔王魂）<br>　</span>
+                <a href="https://otologic.jp/" target="_blank">https://otologic.jp/</a>
+                <br>　
+                <a href="https://maou.audio/" target="_blank">https://maou.audio/</a>
+            </div>
+        </div>
+    </div>
+    <script src="../js/earthquake.js"></script>
+    <script src="../js/kyoshin.js"></script>
+</body>
+
+</html>

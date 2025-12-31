@@ -1,0 +1,134 @@
+html,
+body {
+    color: #000;
+    background: #ddd;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+    padding: 0;
+    font-family: Meiryo UI, sans-serif;
+    font-size: 12px;
+}
+
+#main {
+    position: relative;
+    width: 352px;
+    height: 400px;
+}
+
+#map_basemap,
+#map_kyoshin,
+#eewinfo,
+#pswave,
+#opensetting {
+    position: absolute;
+}
+
+#map_basemap {
+    z-index: 0;
+}
+
+#map_kyoshin {
+    z-index: 10;
+}
+
+#eewinfo {
+    z-index: 10;
+    width: 230px;
+    height: 85px;
+    color: #fff;
+    background: #666;
+    font-size: 12px;
+}
+
+#pswave {
+    z-index: 20;
+}
+
+#opensetting {
+    bottom: 0;
+    left: 140px;
+    z-index: 30;
+}
+
+#menu {
+    position: relative;
+    width: 352px;
+    height: 220px;
+    background: #fff;
+}
+
+#menubt {
+    position: relative;
+    width: 352px;
+    height: 20px;
+}
+
+#r1,
+#r2,
+#r3,
+#r4,
+#r6 {
+    display: none;
+}
+
+#l1,
+#l2,
+#l3,
+#l4,
+#l6 {
+    background: linear-gradient(to bottom, #ccc 0% 50%, #aaa 50% 100%);
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#r1:checked+label,
+#r2:checked+label,
+#r3:checked+label,
+#r4:checked+label,
+#r6:checked+label {
+    background: linear-gradient(to bottom, #fff 0% 50%, #ddd 50% 100%);
+}
+
+#m1,
+#m2,
+#m3,
+#m4,
+#m6 {
+    position: absolute;
+    width: 352px;
+    height: 220px;
+    display: none;
+    clear: both;
+    background: #fff;
+}
+
+#r1:checked~#m1,
+#r2:checked~#m2,
+#r3:checked~#m3,
+#r4:checked~#m4,
+#r6:checked~#m6 {
+    display: block;
+}
+
+#qi {
+    display: block;
+    overflow: auto;
+}
+
+#gettime {
+    display: block;
+    text-align: center;
+}
+
+#colors {
+    display: block;
+    text-align: center;
+}
+
+#late,
+#inttx {
+    color: blue;
+}
